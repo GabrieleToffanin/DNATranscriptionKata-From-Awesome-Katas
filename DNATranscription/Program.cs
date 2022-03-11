@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using DNATranscription;
 
-string dnaSequence = "TTAGGGCATG".ToUpper();
+string dnaSequence = "AGGACGGGCTAACTCCGCTCGTCACAAAGCGCAATGCAGCTATGGCAGATGTTCATGCCG".ToUpper();
 
 string? antisenseDNA;
 
@@ -25,7 +25,7 @@ DNATransformationUtils.ConvertJsonToDictionary("peptides", out peptidesCollectio
 //Remember AUG is the first codon 
 
 List<string> proteinChain;
-DNATransformationUtils.FindProteinChain(firstRnaSequence , codonsCollection, peptidesCollection, out proteinChain);
+DNATransformationUtils.FindProteinChain(firstRnaSequence, codonsCollection, peptidesCollection, out proteinChain);
 
 foreach (var item in proteinChain) Console.WriteLine(item);
 

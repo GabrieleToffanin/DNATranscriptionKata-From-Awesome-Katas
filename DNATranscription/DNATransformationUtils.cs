@@ -108,7 +108,7 @@ namespace DNATranscription
             bool chainFound = false;
             bool chainStarted = false;
 
-            while (!chainFound && i < rnaSequence?.Length)
+            while (!chainFound && rnaSequence?.Length >= 3)
             {
                 if (codonsCollection.ContainsKey(rnaSequence[i..(i + 3)]))
                 {
@@ -133,6 +133,7 @@ namespace DNATranscription
                 if (chainStarted) i += 3;
                 else i++;
             }
+           
         }
     }
 }
