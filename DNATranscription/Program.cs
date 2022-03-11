@@ -1,6 +1,7 @@
 ﻿//That's the first dna sequence, furthermore because the dna is double-stranded we have the "antisense" sequence too
 using Newtonsoft.Json;
 using DNATranscription;
+using BenchmarkDotNet.Running;
 
 string dnaSequence = "AGGACGGGCTAACTCCGCTCGTCACAAAGCGCAATGCAGCTATGGCAGATGTTCATGCCG".ToUpper();
 
@@ -27,7 +28,8 @@ DNATransformationUtils.ConvertJsonToDictionary("peptides", out peptidesCollectio
 List<string> proteinChain;
 DNATransformationUtils.FindProteinChain(firstRnaSequence, codonsCollection, peptidesCollection, out proteinChain);
 
-foreach (var item in proteinChain) Console.WriteLine(item);
+
+var summary = BenchmarkRunner.Run<TransformationBenchmarks>();
 
 
 

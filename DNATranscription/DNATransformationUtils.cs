@@ -79,6 +79,7 @@ namespace DNATranscription
         public static void ConvertJsonToDictionary(string filePath, out Dictionary<string, string> codonsCollection)
         {
             var result = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(@$"{filePath}.json"));
+
             codonsCollection = new Dictionary<string, string>();
             if(result is not null)
             {
@@ -97,11 +98,10 @@ namespace DNATranscription
         /// <param name="codonsCollection"></param>
         /// <param name="peptidesCollection"></param>
         /// <param name="proteinChain"></param>
-        public static void FindProteinChain(
-            in string? rnaSequence, 
-            in Dictionary<string, string> codonsCollection, 
-            in Dictionary<string, string> peptidesCollection, 
-            out List<string> proteinChain)
+        public static void FindProteinChain(in string? rnaSequence, 
+                                            in Dictionary<string, string> codonsCollection, 
+                                            in Dictionary<string, string> peptidesCollection, 
+                                            out List<string> proteinChain)
         {
             proteinChain = new List<string>();
             int i = 0;
