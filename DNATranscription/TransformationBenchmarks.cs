@@ -11,11 +11,11 @@ namespace DNATranscription
     public class TransformationBenchmarks
     {
         private const string dnaSequence = "AGGACGGGCTAACTCCGCTCGTCACAAAGCGCAATGCAGCTATGGCAGATGTTCATGCCG";
+        string? testingString;
 
         [Benchmark(Baseline = true)]
         public void TestDNAToRNATransformMethodSpeed()
         {
-            string? testingString;
             DNATransformationUtils.ConvertToRNASequence(dnaSequence, out testingString);
         }
     }
