@@ -98,6 +98,8 @@ static void ConvertJsonToDictionary(string filePath, out Dictionary<string, stri
     }
 }
 
+
+//If not Start or End sequence found still needs to be fixed
 static void FindProteinChain(in string rnaSequence, in Dictionary<string, string> codonsCollection, in Dictionary<string, string> peptidesCollection, out List<string> proteinChain)
 {
     proteinChain = new List<string>();
